@@ -1,0 +1,30 @@
+<?php
+
+require_once("include/func_command/pwd_echo_cat.php");
+require_once("include/getline.php");
+require_once("include/getcommand.php");
+require_once("include/func_command/redirection/func_redir.php");
+
+echo "\033c";
+$MYENV = $_SERVER;
+print_r($MYENV);
+$fd = fopen("php://stdin", "r");
+if ($fd !== FALSE)
+  {
+    echo "$> ";
+    while (($line = fgets($fd)) !== FALSE)
+      {
+	$command = getcommand($line);
+	$ptr = "func_".$command;
+	if ($ptr == "func_exit")
+	  return (0);
+	else if (isredir($line) == 1)
+	    func_redir($line);
+	else if (function_exists($ptr))
+	  {
+	    $ptr($line, $fd);
+	  }
+	echo "$> ";
+      }    
+    fclose($fd);
+  }
