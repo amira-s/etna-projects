@@ -1,6 +1,4 @@
-# etna-projects
-
-Welcome to StackEdit!
+Etna-projects
 ===================
 
 
