@@ -2,7 +2,7 @@ Etna-projects
 ===================
 
 
-:rabbit: Hey ! These are some school projects i had to make.
+Hey ! These are some school projects i had to make.
 
 ----------
 
