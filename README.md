@@ -46,7 +46,7 @@ Libmy
 -------------
 
 A library of  useful **C** functions.
-```	  
+```c	  
 	  void    my_putchar(char c);
 	  int     my_isneg(int n);
 	  void    my_put_nbr(int nb);
